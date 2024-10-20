@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성된 이미지</title>
+</head>
+<body>
+    <h1>생성된 이미지</h1>
+    {% for filename in images %}
+        <div>
+            <a href="{{ url_for('download_image', filename=filename) }}">이미지 다운로드 ({{ filename }})</a>
+        </div>
+    {% endfor %}
+    <a href="/">다시 생성하기</a>
+</body>
+</html>
+
