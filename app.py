@@ -7,7 +7,7 @@ from PIL import ImageFont
 
 app = Flask(__name__)
 
-font_path = "/usr/share/fonts/Arial.ttf"
+font_path = "./DejaVuSans.ttf"
 font_size = 50
 font = ImageFont.truetype(font_path, font_size)  # 원하는 폰트 크기 설정
 
