@@ -11,6 +11,9 @@ font_path = "./DejaVuSans.ttf"
 font_size = 50
 font = ImageFont.truetype(font_path, font_size)  # 원하는 폰트 크기 설정
 
+# 이미지 저장할 디렉토리 생성
+if not os.path.exists('images'):
+    os.makedirs('images')
 
 def create_image_with_text(input_string, image_index):
     # A4 용지 크기 (210mm x 297mm) -> 픽셀로 변환 (300 DPI 기준)
@@ -111,8 +114,5 @@ def download_image(filename):
     return send_file(img_path, mimetype='image/png', as_attachment=True)
 
 if __name__ == '__main__':
-    # 이미지 저장할 디렉토리 생성
-    if not os.path.exists('images'):
-        os.makedirs('images')
     app.run(debug=True)
 
