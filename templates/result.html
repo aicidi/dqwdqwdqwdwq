@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>생성된 이미지</title>
+    <title>Generated Images</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>생성된 이미지</h1>
-    {% for filename in images %}
-        <div>
-            <a href="{{ url_for('download_image', filename=filename) }}">이미지 다운로드 ({{ filename }})</a>
-        </div>
-    {% endfor %}
-    <a href="/">다시 생성하기</a>
+    <div class="container mt-5">
+        <h2 class="text-center">Generated Image Links</h2>
+        <ul class="list-group">
+            {% for url in image_urls %}
+                <li class="list-group-item">
+                    <a href="{{ url }}" target="_blank">Download Image {{ loop.index }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Go Back</a>
+    </div>
 </body>
 </html>
+
 

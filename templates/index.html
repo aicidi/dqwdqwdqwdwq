@@ -1,44 +1,26 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문자 입력</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        textarea {
-            width: 90%;
-            height: calc(100vh - 100px); /* 버튼과 여백을 고려한 높이 */
-            padding: 10px;
-            font-size: 16px;
-            resize: none; /* 크기 조절 비활성화 */
-        }
-        button {
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-    </style>
+    <title>Unicode Image Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>문자 입력</h1>
-    <form method="POST" style="width: 100%;">
-        <button type="submit">이미지 생성</button>
-        <br />
-        <textarea id="input_string" name="input_string" placeholder="여기에 문자열을 입력하세요..." required></textarea>
-    </form>
+    <div class="container mt-5">
+        <h1 class="text-center">Unicode Image Generator</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="text">Enter Text:</label>
+                <textarea class="form-control" id="text" name="text" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cols">Columns:</label>
+                <input type="number" class="form-control" id="cols" name="cols" value="10">
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Images</button>
+        </form>
+    </div>
 </body>
 </html>
 
